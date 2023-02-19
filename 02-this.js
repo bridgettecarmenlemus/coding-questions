@@ -8,3 +8,19 @@
  * 
  * 
  */
+
+const person = {
+    name: 'Bridgette',
+    car: "Mini Cooper",
+    sayName: function () {
+        console.log(this.name, this.car)
+    }
+}
+
+// person.sayName() this works
+const localSayName = person.sayName
+
+// local SayName() // this does not work because this has lost it's runtime binding 
+
+const boundSayName = person.sayName.bind(person)
+boundSayName
